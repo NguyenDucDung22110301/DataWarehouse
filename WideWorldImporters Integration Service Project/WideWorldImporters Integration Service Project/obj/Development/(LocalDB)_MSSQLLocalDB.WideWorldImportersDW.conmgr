@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="(LocalDB)_MSSQLLocalDB.WideWorldImportersDW"
+  DTS:DTSID="{7E4406A3-4ED9-4097-BFB4-02763723D800}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=WideWorldImportersDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-WideWorldImporters Integration Service Project-{7E4406A3-4ED9-4097-BFB4-02763723D800}(LocalDB)\MSSQLLocalDB.WideWorldImpo;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
