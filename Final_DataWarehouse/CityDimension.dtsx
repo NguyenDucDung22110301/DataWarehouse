@@ -1,0 +1,1486 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/22/2025 11:36:22 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-3C755U2"
+  DTS:CreatorName="DESKTOP-3C755U2\Admin"
+  DTS:DTSID="{F78E94A6-ADCE-47DF-9C04-3CA2EDADB0AB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="CityDimension"
+  DTS:PackageType="5"
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{7D041E33-2034-4329-9DC3-AFECD0C62981}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImporters 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{ACF1FC5D-F775-4D53-A780-E94058360345}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImporters 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImporters;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDWStage 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BB3605E9-781F-4274-BFEE-373E1F948D4E}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImportersDWStage 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImportersDWStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDWStage 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8DD30EBD-55A9-40DF-B871-A980D4477CDA}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImportersDWStage 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImportersDWStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDWStage 3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B2012CA9-B4BE-4F26-8AAF-2F57B99744D7}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImportersDWStage 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImportersDWStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF - Extract From Source to Stage stgCity"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0E541498-2410-46B3-B1ED-80A976E0AFE9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Extract From Source to Stage stgCity"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DST - stgWideWorldImportersDWCity"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stgWideWorldImportersDWCity]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Connections[OleDbConnection]"
+                  connectionManagerID="{69F68E84-54C6-4BC8-854E-B9063CE017EA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDWStage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Inputs[OLE DB Destination Input].Columns[City_Key]"
+                      cachedDataType="i4"
+                      cachedName="City_Key"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Inputs[OLE DB Destination Input].ExternalColumns[City_Key]"
+                      lineageId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[City_Key]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Inputs[OLE DB Destination Input].Columns[C]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="C"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Inputs[OLE DB Destination Input].ExternalColumns[C]"
+                      lineageId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[C]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Inputs[OLE DB Destination Input].Columns[Location]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Location"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
+                      lineageId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[Location]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Inputs[OLE DB Destination Input].Columns[State_Province_Key]"
+                      cachedDataType="i4"
+                      cachedName="State_Province_Key"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Inputs[OLE DB Destination Input].ExternalColumns[State_Province_Key]"
+                      lineageId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[State_Province_Key]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Inputs[OLE DB Destination Input].ExternalColumns[City_Key]"
+                      dataType="i4"
+                      name="City_Key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Inputs[OLE DB Destination Input].ExternalColumns[C]"
+                      dataType="wstr"
+                      length="40"
+                      name="C" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
+                      dataType="wstr"
+                      length="200"
+                      name="Location" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Inputs[OLE DB Destination Input].ExternalColumns[State_Province_Key]"
+                      dataType="i4"
+                      name="State_Province_Key" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - WideWorldImportersDWCity"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[City]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Connections[OleDbConnection]"
+                  connectionManagerID="{1E077640-421F-4F55-9999-37DFB25A2378}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImporters]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[City_Key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].ExternalColumns[City_Key]"
+                      lineageId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[City_Key]"
+                      name="City_Key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[C]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].ExternalColumns[C]"
+                      length="40"
+                      lineageId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[C]"
+                      name="C"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[Location]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].ExternalColumns[Location]"
+                      length="200"
+                      lineageId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[Location]"
+                      name="Location"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[State_Province_Key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].ExternalColumns[State_Province_Key]"
+                      lineageId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[State_Province_Key]"
+                      name="State_Province_Key"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].ExternalColumns[City_Key]"
+                      dataType="i4"
+                      name="City_Key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].ExternalColumns[C]"
+                      dataType="wstr"
+                      length="40"
+                      name="C" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].ExternalColumns[Location]"
+                      dataType="wstr"
+                      length="200"
+                      name="Location" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output].ExternalColumns[State_Province_Key]"
+                      dataType="i4"
+                      name="State_Province_Key" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[City_Key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[City_Key]"
+                      name="City_Key" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[C]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[C]"
+                      name="C" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[Location]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[Location]"
+                      name="Location" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[State_Province_Key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[State_Province_Key]"
+                      name="State_Province_Key" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Extract From Source to Stage stgCity.Paths[OLE DB Source Output]"
+              endId="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF - Load from stgDate to DimCity"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F1B95208-9588-4F77-8117-D9E45CED37CC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Load from stgDate to DimCity"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Load from stgDate to DimCity\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimCity]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{30C18DC1-B3D1-42B8-8D37-87087F546341}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].Columns[City_Key]"
+                      cachedDataType="i4"
+                      cachedName="City_Key"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CityID]"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[City_Key]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].Columns[C]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="C"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[C]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].Columns[Location]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Location"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[Location]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].Columns[State_Province_Key]"
+                      cachedDataType="i4"
+                      cachedName="State_Province_Key"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateProvinceKey]"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[State_Province_Key]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CityKey]"
+                      dataType="i4"
+                      name="CityKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CityID]"
+                      dataType="i4"
+                      name="CityID" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="40"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
+                      dataType="wstr"
+                      length="200"
+                      name="Location" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateProvinceKey]"
+                      dataType="i4"
+                      name="StateProvinceKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[RowIsCurrent]"
+                      dataType="bool"
+                      name="RowIsCurrent" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[RowStartDate]"
+                      dataType="dbDate"
+                      name="RowStartDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[RowEndDate]"
+                      dataType="dbDate"
+                      name="RowEndDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[RowChangeReason]"
+                      dataType="wstr"
+                      length="200"
+                      name="RowChangeReason" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[InsertAuditKey]"
+                      dataType="i4"
+                      name="InsertAuditKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdateAuditKey]"
+                      dataType="i4"
+                      name="UpdateAuditKey" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgDate to DimCity\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgDate to DimCity\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Load - WideWorldImportersDW"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [City], [CityID], [Location], [StateProvinceKey] FROM [dbo].[DimCity]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Connections[LookupConnection]"
+                  connectionManagerID="{30C18DC1-B3D1-42B8-8D37-87087F546341}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDW]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input].Columns[C]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="C"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input].ExternalColumns[City]"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[C]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input].Columns[City_Key]"
+                      cachedDataType="i4"
+                      cachedName="City_Key"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input].ExternalColumns[CityID]"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[City_Key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input].Columns[Location]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Location"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input].ExternalColumns[Location]"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[Location]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input].Columns[State_Province_Key]"
+                      cachedDataType="i4"
+                      cachedName="State_Province_Key"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input].ExternalColumns[StateProvinceKey]"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[State_Province_Key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="40"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input].ExternalColumns[CityID]"
+                      dataType="i4"
+                      name="CityID" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input].ExternalColumns[Location]"
+                      dataType="wstr"
+                      length="200"
+                      name="Location" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input].ExternalColumns[StateProvinceKey]"
+                      dataType="i4"
+                      name="StateProvinceKey" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgDate to DimCity\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimCity] SET [City] = ?,[Location] = ?,[StateProvinceKey] = ? WHERE [CityID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{30C18DC1-B3D1-42B8-8D37-87087F546341}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Inputs[OLE DB Command Input].Columns[C]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="C"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[C]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Inputs[OLE DB Command Input].Columns[City_Key]"
+                      cachedDataType="i4"
+                      cachedName="City_Key"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[City_Key]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Inputs[OLE DB Command Input].Columns[Location]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Location"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[Location]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Inputs[OLE DB Command Input].Columns[State_Province_Key]"
+                      cachedDataType="i4"
+                      cachedName="State_Province_Key"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[State_Province_Key]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="40"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="200"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - stgWideWorldImportersDWCity"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stgWideWorldImportersDWCity]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Connections[OleDbConnection]"
+                  connectionManagerID="{69F68E84-54C6-4BC8-854E-B9063CE017EA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDWStage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[City_Key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].ExternalColumns[City_Key]"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[City_Key]"
+                      name="City_Key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[C]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].ExternalColumns[C]"
+                      length="40"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[C]"
+                      name="C"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[Location]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].ExternalColumns[Location]"
+                      length="200"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[Location]"
+                      name="Location"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[State_Province_Key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].ExternalColumns[State_Province_Key]"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[State_Province_Key]"
+                      name="State_Province_Key"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].ExternalColumns[City_Key]"
+                      dataType="i4"
+                      name="City_Key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].ExternalColumns[C]"
+                      dataType="wstr"
+                      length="40"
+                      name="C" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].ExternalColumns[Location]"
+                      dataType="wstr"
+                      length="200"
+                      name="Location" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].ExternalColumns[State_Province_Key]"
+                      dataType="i4"
+                      name="State_Province_Key" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[City_Key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[City_Key]"
+                      name="City_Key" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[C]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[C]"
+                      name="C" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[Location]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[Location]"
+                      name="Location" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[State_Province_Key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[State_Province_Key]"
+                      name="State_Province_Key" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Load from stgDate to DimCity.Paths[Changing Attribute Updates Output]"
+              endId="Package\DF - Load from stgDate to DimCity\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\DF - Load from stgDate to DimCity.Paths[New Output]"
+              endId="Package\DF - Load from stgDate to DimCity\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="New Output"
+              startId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Outputs[New Output]" />
+            <path
+              refId="Package\DF - Load from stgDate to DimCity.Paths[OLE DB Source Output]"
+              endId="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW.Inputs[Slowly Changing Dimension Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL - Truncate stgCity Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5336316A-09FC-4D5F-9CFF-94984B49CC62}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL - Truncate stgCity Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{69F68E84-54C6-4BC8-854E-B9063CE017EA}"
+          SQLTask:SqlStatementSource="Truncate table stgWideWorldImportersDWCity" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{DE5BA0C9-6316-4D10-8F3F-07CF76586281}"
+      DTS:From="Package\SQL - Truncate stgCity Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF - Extract From Source to Stage stgCity" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A8E80942-7396-4C14-BB98-82BCC0A09B00}"
+      DTS:From="Package\DF - Extract From Source to Stage stgCity"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DF - Load from stgDate to DimCity" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="275.2,41.6"
+          Id="Package\DF - Extract From Source to Stage stgCity"
+          TopLeft="210.000000447036,178.941176313739" />
+        <NodeLayout
+          Size="241.6,41.6"
+          Id="Package\DF - Load from stgDate to DimCity"
+          TopLeft="232.857143352834,276.058823287436" />
+        <NodeLayout
+          Size="213.6,41.6"
+          Id="Package\SQL - Truncate stgCity Table"
+          TopLeft="241.928571931866,68.2058822979771" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="348.164286189451,109.805882297977">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69.1352940157622"
+              Start="0,0"
+              End="0,61.6352940157622">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.6352940157622" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="350.628571899935,220.541176313739">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.5176469736966"
+              Start="0,0"
+              End="0,48.0176469736966">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.0176469736966" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF - Extract From Source to Stage stgCity">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="240,41.6"
+          Id="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity"
+          TopLeft="224.28571476316,48.1764705460068" />
+        <NodeLayout
+          Size="254.4,41.6"
+          Id="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity"
+          TopLeft="219.071429026066,225.735293924602" />
+        <EdgeLayout
+          Id="Package\DF - Extract From Source to Stage stgCity.Paths[OLE DB Source Output]"
+          TopLeft="345.278571894613,89.7764705460068">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,135.958823378595"
+              Start="0,0"
+              End="0,128.458823378595">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,128.458823378595" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.0951171875,58.6151538767977,50.190234375,11.228515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Extract From Source to Stage stgCity\DST - stgWideWorldImportersDWCity">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Extract From Source to Stage stgCity\SRC - WideWorldImportersDWCity">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF - Load from stgDate to DimCity">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="225.6,41.6"
+          Id="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW"
+          TopLeft="197.9,107.1" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\DF - Load from stgDate to DimCity\Insert Destination"
+          TopLeft="5.50000000000004,208.7" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\DF - Load from stgDate to DimCity\OLE DB Command"
+          TopLeft="228.3,208.7" />
+        <NodeLayout
+          Size="254.4,41.6"
+          Id="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity"
+          TopLeft="183.5,5.50000000000007" />
+        <EdgeLayout
+          Id="Package\DF - Load from stgDate to DimCity.Paths[OLE DB Source Output]"
+          TopLeft="310.7,47.1000000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.0951171875,20.6357421875001,50.190234375,11.228515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - Load from stgDate to DimCity.Paths[New Output]"
+          TopLeft="274.433333333333,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-187.733333333333,60"
+              Start="0,0"
+              End="-187.733333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2535211267606" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2535211267606"
+                    Point2="0,24.2535211267606"
+                    Point3="-4,24.2535211267606" />
+                  <mssgle:LineSegment
+                    End="-183.733333333333,24.2535211267606" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-183.733333333333,24.2535211267606"
+                    Point2="-187.733333333333,24.2535211267606"
+                    Point3="-187.733333333333,28.2535211267606" />
+                  <mssgle:LineSegment
+                    End="-187.733333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-150.548404947917,29.2535211267606,113.3634765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - Load from stgDate to DimCity.Paths[Changing Attribute Updates Output]"
+          TopLeft="346.966666666667,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-36.2666666666667,60"
+              Start="0,0"
+              End="-36.2666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2535211267606" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2535211267606"
+                    Point2="0,24.2535211267606"
+                    Point3="-4,24.2535211267606" />
+                  <mssgle:LineSegment
+                    End="-32.2666666666667,24.2535211267606" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-32.2666666666667,24.2535211267606"
+                    Point2="-36.2666666666667,24.2535211267606"
+                    Point3="-36.2666666666667,28.2535211267606" />
+                  <mssgle:LineSegment
+                    End="-36.2666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-96.6672395833334,29.2535211267606,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgDate to DimCity\Load - WideWorldImportersDW">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{30C18DC1-B3D1-42B8-8D37-87087F546341}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[DimCity]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[C]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;City&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[City_Key]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CityID&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[Location]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Location&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - stgWideWorldImportersDWCity.Outputs[OLE DB Source Output].Columns[State_Province_Key]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;StateProvinceKey&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgDate to DimCity\SRC - stgWideWorldImportersDWCity">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

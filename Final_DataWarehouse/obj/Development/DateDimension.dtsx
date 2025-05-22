@@ -1,0 +1,1661 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/22/2025 10:37:23 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-3C755U2"
+  DTS:CreatorName="DESKTOP-3C755U2\Admin"
+  DTS:DTSID="{944C1886-D716-4700-AB73-D699DF415042}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="DateDimension"
+  DTS:PackageType="5"
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{4F4CFC23-82C5-4D2E-A332-4AA5577ECE1D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImporters 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{804CA3A9-4296-4BBD-B645-9545C04DD6D9}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImporters 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImporters;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDWStage 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2FE0EAD0-90C3-40FE-98CD-ECC47B8D1FC1}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImportersDWStage 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImportersDWStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDWStage 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6002C039-CC78-43AE-8967-8B31970CD595}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImportersDWStage 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImportersDWStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF - Extract From Source to Stage stgDate"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E39263DA-56BB-41D6-947B-74399155ED06}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Extract From Source to Stage stgDate"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DST - Stage Empoyee"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stgWideWorldImportersDWDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Connections[OleDbConnection]"
+                  connectionManagerID="{69F68E84-54C6-4BC8-854E-B9063CE017EA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDWStage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].Columns[Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].Columns[Month]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Month"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[Month]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].Columns[Month_Number]"
+                      cachedDataType="i4"
+                      cachedName="Month_Number"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].ExternalColumns[Month_Number]"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[Month_Number]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].Columns[Quarter]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Quarter"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].ExternalColumns[Quarter]"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[Quarter]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].Columns[Year]"
+                      cachedDataType="i4"
+                      cachedName="Year"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[Year]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].Columns[ISO_Week_Number]"
+                      cachedDataType="ui1"
+                      cachedName="ISO_Week_Number"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].ExternalColumns[ISO_Week_Number]"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[ISO_Week_Number]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                      dataType="wstr"
+                      length="10"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].ExternalColumns[Quarter]"
+                      dataType="wstr"
+                      length="10"
+                      name="Quarter" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      dataType="i4"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].ExternalColumns[Month_Number]"
+                      dataType="i4"
+                      name="Month_Number" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input].ExternalColumns[ISO_Week_Number]"
+                      dataType="ui1"
+                      name="ISO_Week_Number" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - Employee - Dimension"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Date]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Connections[OleDbConnection]"
+                  connectionManagerID="{1E077640-421F-4F55-9999-37DFB25A2378}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImporters]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[Month]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].ExternalColumns[Month]"
+                      length="10"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[Month]"
+                      name="Month"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[Month_Number]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].ExternalColumns[Month_Number]"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[Month_Number]"
+                      name="Month_Number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[Quarter]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
+                      length="10"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[Quarter]"
+                      name="Quarter"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[Year]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[Year]"
+                      name="Year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[ISO_Week_Number]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].ExternalColumns[ISO_Week_Number]"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].Columns[ISO_Week_Number]"
+                      name="ISO_Week_Number"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      dataType="dbDate"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].ExternalColumns[Month]"
+                      dataType="wstr"
+                      length="10"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].ExternalColumns[Month_Number]"
+                      dataType="i4"
+                      name="Month_Number" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
+                      dataType="wstr"
+                      length="10"
+                      name="Quarter" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      dataType="i4"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output].ExternalColumns[ISO_Week_Number]"
+                      dataType="ui1"
+                      name="ISO_Week_Number" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      dataType="dbDate"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Error Output].Columns[Month]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Error Output].Columns[Month]"
+                      name="Month" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Error Output].Columns[Month_Number]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Error Output].Columns[Month_Number]"
+                      name="Month_Number" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Error Output].Columns[Quarter]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Error Output].Columns[Quarter]"
+                      name="Quarter" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      name="Year" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Error Output].Columns[ISO_Week_Number]"
+                      dataType="ui1"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Error Output].Columns[ISO_Week_Number]"
+                      name="ISO_Week_Number" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Extract From Source to Stage stgDate.Paths[OLE DB Source Output]"
+              endId="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF - Load from stgDate to DimDate"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F45C5826-8E8C-4120-ADFB-BD6455C88AD6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Load from stgDate to DimDate"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Load from stgDate to DimDate\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{30C18DC1-B3D1-42B8-8D37-87087F546341}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].Columns[Month]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Month"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Month]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].Columns[Month_Number]"
+                      cachedDataType="i4"
+                      cachedName="Month_Number"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[MonthNumber]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Month_Number]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].Columns[Quarter]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Quarter"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quarter]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Quarter]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].Columns[Year]"
+                      cachedDataType="i4"
+                      cachedName="Year"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Year]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].Columns[ISO_Week_Number]"
+                      cachedDataType="ui1"
+                      cachedName="ISO_Week_Number"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ISOWeekNumber]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[ISO_Week_Number]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                      dataType="wstr"
+                      length="10"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[MonthNumber]"
+                      dataType="i4"
+                      name="MonthNumber" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quarter]"
+                      dataType="wstr"
+                      length="10"
+                      name="Quarter" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      dataType="i4"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ISOWeekNumber]"
+                      dataType="ui1"
+                      name="ISOWeekNumber" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[TimeKey]"
+                      dataType="i4"
+                      name="TimeKey" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgDate to DimDate\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgDate to DimDate\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgDate to DimDate\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimDate] SET [ISOWeekNumber] = ?,[Month] = ?,[MonthNumber] = ?,[Quarter] = ?,[Year] = ? WHERE [Date] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{30C18DC1-B3D1-42B8-8D37-87087F546341}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].Columns[ISO_Week_Number]"
+                      cachedDataType="ui1"
+                      cachedName="ISO_Week_Number"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[ISO_Week_Number]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].Columns[Month]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Month"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Month]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].Columns[Month_Number]"
+                      cachedDataType="i4"
+                      cachedName="Month_Number"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Month_Number]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].Columns[Quarter]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Quarter"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Quarter]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].Columns[Year]"
+                      cachedDataType="i4"
+                      cachedName="Year"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Year]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="ui1"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="10"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="10"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="i4"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="dbTimeStamp"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Date], [ISOWeekNumber], [Month], [MonthNumber], [Quarter], [Year] FROM [dbo].[DimDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{30C18DC1-B3D1-42B8-8D37-87087F546341}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDW]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Date]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ISO_Week_Number]"
+                      cachedDataType="ui1"
+                      cachedName="ISO_Week_Number"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ISOWeekNumber]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[ISO_Week_Number]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Month]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Month"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Month]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Month]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Month_Number]"
+                      cachedDataType="i4"
+                      cachedName="Month_Number"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[MonthNumber]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Month_Number]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Quarter]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Quarter"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Quarter]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Quarter]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Year]"
+                      cachedDataType="i4"
+                      cachedName="Year"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Year]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Year]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ISOWeekNumber]"
+                      dataType="ui1"
+                      name="ISOWeekNumber" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Month]"
+                      dataType="wstr"
+                      length="10"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[MonthNumber]"
+                      dataType="i4"
+                      name="MonthNumber" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Quarter]"
+                      dataType="wstr"
+                      length="10"
+                      name="Quarter" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Year]"
+                      dataType="i4"
+                      name="Year" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - Stage stgDate"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stgWideWorldImportersDWDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Connections[OleDbConnection]"
+                  connectionManagerID="{69F68E84-54C6-4BC8-854E-B9063CE017EA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDWStage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Month]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].ExternalColumns[Month]"
+                      length="10"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Month]"
+                      name="Month"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Quarter]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
+                      length="10"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Quarter]"
+                      name="Quarter"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Year]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Year]"
+                      name="Year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Month_Number]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].ExternalColumns[Month_Number]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Month_Number]"
+                      name="Month_Number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[ISO_Week_Number]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].ExternalColumns[ISO_Week_Number]"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[ISO_Week_Number]"
+                      name="ISO_Week_Number"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].ExternalColumns[Month]"
+                      dataType="wstr"
+                      length="10"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
+                      dataType="wstr"
+                      length="10"
+                      name="Quarter" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      dataType="i4"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].ExternalColumns[Month_Number]"
+                      dataType="i4"
+                      name="Month_Number" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output].ExternalColumns[ISO_Week_Number]"
+                      dataType="ui1"
+                      name="ISO_Week_Number" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Error Output].Columns[Month]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Error Output].Columns[Month]"
+                      name="Month" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Error Output].Columns[Quarter]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Error Output].Columns[Quarter]"
+                      name="Quarter" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      name="Year" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Error Output].Columns[Month_Number]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Error Output].Columns[Month_Number]"
+                      name="Month_Number" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Error Output].Columns[ISO_Week_Number]"
+                      dataType="ui1"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Error Output].Columns[ISO_Week_Number]"
+                      name="ISO_Week_Number" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Load from stgDate to DimDate.Paths[Changing Attribute Updates Output]"
+              endId="Package\DF - Load from stgDate to DimDate\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\DF - Load from stgDate to DimDate.Paths[New Output]"
+              endId="Package\DF - Load from stgDate to DimDate\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="New Output"
+              startId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\DF - Load from stgDate to DimDate.Paths[OLE DB Source Output]"
+              endId="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL - Truncate stgDate Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D7BE3748-0533-43E4-AB62-5309D1E59CDB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL - Truncate stgDate Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{69F68E84-54C6-4BC8-854E-B9063CE017EA}"
+          SQLTask:SqlStatementSource="truncate table stgWideWorldImportersDWDate" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{42021A7B-B3EC-484A-94A5-D410C6449799}"
+      DTS:From="Package\SQL - Truncate stgDate Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF - Extract From Source to Stage stgDate" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{EC30C50B-2016-415A-887C-E256A1D7687A}"
+      DTS:From="Package\DF - Extract From Source to Stage stgDate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DF - Load from stgDate to DimDate" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="280,41.6"
+          Id="Package\DF - Extract From Source to Stage stgDate"
+          TopLeft="182.142857530592,185.058823367201" />
+        <NodeLayout
+          Size="245.6,41.6"
+          Id="Package\DF - Load from stgDate to DimDate"
+          TopLeft="212.142857594453,295.176470329501" />
+        <NodeLayout
+          Size="241.6,41.6"
+          Id="Package\SQL - Truncate stgDate Table"
+          TopLeft="237.857143363478,77.2352940499473" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="358.657143363478,118.835294049947">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-36.514285832886,66.2235293172537"
+              Start="0,0"
+              End="-36.514285832886,58.7235293172537">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.1117646586269" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.1117646586269"
+                    Point2="0,33.1117646586269"
+                    Point3="-4,33.1117646586269" />
+                  <mssgle:LineSegment
+                    End="-32.514285832886,33.1117646586269" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-32.514285832886,33.1117646586269"
+                    Point2="-36.514285832886,33.1117646586269"
+                    Point3="-36.514285832886,37.1117646586269" />
+                  <mssgle:LineSegment
+                    End="-36.514285832886,58.7235293172537" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="322.142857530592,226.658823367201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.800000063861,68.5176469623"
+              Start="0,0"
+              End="12.800000063861,61.0176469623">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.25882348115" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.25882348115"
+                    Point2="0,34.25882348115"
+                    Point3="4,34.25882348115" />
+                  <mssgle:LineSegment
+                    End="8.80000006386103,34.25882348115" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.80000006386103,34.25882348115"
+                    Point2="12.800000063861,34.25882348115"
+                    Point3="12.800000063861,38.25882348115" />
+                  <mssgle:LineSegment
+                    End="12.800000063861,61.0176469623" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF - Extract From Source to Stage stgDate">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee"
+          TopLeft="223.571429047353,191.176470420662" />
+        <NodeLayout
+          Size="212.8,41.6"
+          Id="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension"
+          TopLeft="212.142857594454,55.0588234811506" />
+        <EdgeLayout
+          Id="Package\DF - Extract From Source to Stage stgDate.Paths[OLE DB Source Output]"
+          TopLeft="316.457143320904,96.6588234811506">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,94.5176469395111"
+              Start="0,0"
+              End="0,87.0176469395111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,87.0176469395111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Extract From Source to Stage stgDate\DST - Stage Empoyee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Extract From Source to Stage stgDate\SRC - Employee - Dimension">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF - Load from stgDate to DimDate">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate"
+          TopLeft="223.5,5.49999999999995" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension"
+          TopLeft="206.7,107.1" />
+        <EdgeLayout
+          Id="Package\DF - Load from stgDate to DimDate.Paths[OLE DB Source Output]"
+          TopLeft="310.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\DF - Load from stgDate to DimDate\Insert Destination"
+          TopLeft="5.50000000000004,208.7" />
+        <EdgeLayout
+          Id="Package\DF - Load from stgDate to DimDate.Paths[New Output]"
+          TopLeft="277.366666666667,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-190.666666666667,60"
+              Start="0,0"
+              End="-190.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2748091603053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2748091603053"
+                    Point2="0,24.2748091603053"
+                    Point3="-4,24.2748091603053" />
+                  <mssgle:LineSegment
+                    End="-186.666666666667,24.2748091603053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-186.666666666667,24.2748091603053"
+                    Point2="-190.666666666667,24.2748091603053"
+                    Point3="-190.666666666667,28.2748091603053" />
+                  <mssgle:LineSegment
+                    End="-190.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-122.424720052083,29.2748091603053,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\DF - Load from stgDate to DimDate\OLE DB Command"
+          TopLeft="228.3,208.7" />
+        <EdgeLayout
+          Id="Package\DF - Load from stgDate to DimDate.Paths[Changing Attribute Updates Output]"
+          TopLeft="344.033333333333,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33.3333333333333,60"
+              Start="0,0"
+              End="-33.3333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2748091603054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2748091603054"
+                    Point2="0,24.2748091603054"
+                    Point3="-4,24.2748091603054" />
+                  <mssgle:LineSegment
+                    End="-29.3333333333333,24.2748091603054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.3333333333333,24.2748091603054"
+                    Point2="-33.3333333333333,24.2748091603054"
+                    Point3="-33.3333333333333,28.2748091603054" />
+                  <mssgle:LineSegment
+                    End="-33.3333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-95.2005729166667,29.2748091603054,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgDate to DimDate\SRC - Stage stgDate">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgDate to DimDate\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{30C18DC1-B3D1-42B8-8D37-87087F546341}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[DimDate]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Date]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[ISO_Week_Number]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ISOWeekNumber&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Month]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Month&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Month_Number]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;MonthNumber&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Quarter]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Quarter&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgDate.Outputs[OLE DB Source Output].Columns[Year]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Year&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,2137 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/22/2025 11:36:22 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-3C755U2"
+  DTS:CreatorName="DESKTOP-3C755U2\Admin"
+  DTS:DTSID="{9764FDEB-EC04-4809-9E1B-A66C9F4CCACA}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="Fact_EmployeePerformance"
+  DTS:PackageType="5"
+  DTS:VersionBuild="102"
+  DTS:VersionGUID="{CA63691F-CC4F-498B-A3AF-70FE5DB1690C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{855A38B2-EC02-474B-AE9E-773DC10384C4}"
+      DTS:ObjectName="DESKTOP-3C755U2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{32408AC2-78D1-409D-AC30-88DC04CBD8BC}"
+      DTS:ObjectName="DESKTOP-3C755U2 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{47ED0189-D65C-4D3A-B298-26D890BD75BB}"
+      DTS:ObjectName="DESKTOP-3C755U2 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImporters 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{301E0ECD-3EAF-4CCE-AD2A-BFC5921EA826}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImporters 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImporters;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDW 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6D0E94DE-381D-43B3-AF11-3E1419D143E0}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImportersDW 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImportersDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDW 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{87CBA0A4-3817-4164-B4C9-7A8F0B0CA89C}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImportersDW 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImportersDW;Provider=SQLNCLIRDA11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDW 3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{809461D0-9E46-47B0-881A-B9490B9BB07D}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImportersDW 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImportersDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDW 4]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4EB956A8-4119-4A7B-9DF3-4DE8E09685E3}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImportersDW 4">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImportersDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDW 5]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BCF7453F-9CDB-4389-A672-A2A4164CD858}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImportersDW 5">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImportersDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDW 6]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2C17A760-B2A0-4F33-89CD-AD8ADEAA8372}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImportersDW 6">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImportersDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDW 7]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BD3711B3-3818-444D-9C1B-FC1757D96AD2}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImportersDW 7">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImportersDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDWStage 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DEAFAD91-12C5-4123-87B4-C7BC7A438242}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImportersDWStage 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImportersDWStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDWStage 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{571B8B11-7F2A-4885-8D57-85FCB6BF4E56}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImportersDWStage 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImportersDWStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDWStage 3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6E329C7E-3855-4D8F-AA9C-B18BC93AB1F6}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImportersDWStage 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImportersDWStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDWStage 4]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A83473A2-F448-4921-AB0F-92E134F7508C}"
+      DTS:ObjectName="DESKTOP-3C755U2.WideWorldImportersDWStage 4">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-3C755U2;Initial Catalog=WideWorldImportersDWStage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Fact_EmployeePerformance-{A83473A2-F448-4921-AB0F-92E134F7508C}DESKTOP-3C755U2.WideWorldImportersDWStage 4;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF - Extract From Source to Stage FactEmployeePerformance"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D39B54DF-BB70-4252-A654-9904425FC45D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Extract From Source to Stage FactEmployeePerformance"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DST - stgWideWorldImportersDWFactEmployeePerformance"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stgWideWorldImportersDWFactEmployeePerformance]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Connections[OleDbConnection]"
+                  connectionManagerID="{69F68E84-54C6-4BC8-854E-B9063CE017EA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDWStage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].Columns[City_Key]"
+                      cachedDataType="i4"
+                      cachedName="City_Key"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].ExternalColumns[City_Key]"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[City_Key]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].Columns[Salesperson_Key]"
+                      cachedDataType="i4"
+                      cachedName="Salesperson_Key"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].ExternalColumns[Salesperson_Key]"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Salesperson_Key]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].Columns[Invoice_Date_Key]"
+                      cachedDataType="dbDate"
+                      cachedName="Invoice_Date_Key"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Date_Key]"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Invoice_Date_Key]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].Columns[Profit]"
+                      cachedDataType="numeric"
+                      cachedName="Profit"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].ExternalColumns[Profit]"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Profit]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].Columns[NumTransactions]"
+                      cachedDataType="i4"
+                      cachedName="NumTransactions"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].ExternalColumns[NumTransactions]"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[NumTransactions]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].Columns[TotalIncTax]"
+                      cachedDataType="numeric"
+                      cachedName="TotalIncTax"
+                      cachedPrecision="38"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].ExternalColumns[TotalIncTax]"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[TotalIncTax]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].ExternalColumns[City_Key]"
+                      dataType="i4"
+                      name="City_Key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].ExternalColumns[Salesperson_Key]"
+                      dataType="i4"
+                      name="Salesperson_Key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Date_Key]"
+                      dataType="dbDate"
+                      name="Invoice_Date_Key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].ExternalColumns[TotalIncTax]"
+                      dataType="numeric"
+                      name="TotalIncTax"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].ExternalColumns[Profit]"
+                      dataType="numeric"
+                      name="Profit"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input].ExternalColumns[NumTransactions]"
+                      dataType="i4"
+                      name="NumTransactions" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - stgWideWorldImportersDWFactEmployeePerformance"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[City]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+    s.City_Key AS City_Key,
+    s.Salesperson_Key AS Salesperson_Key,
+    s.Invoice_Date_Key AS Invoice_Date_Key,
+    SUM(s.Total_Including_Tax) AS TotalIncTax,
+    SUM(s.Profit) AS Profit,
+    COUNT(DISTINCT s.WWI_Invoice_ID) AS NumTransactions 
+FROM dbo.Sale AS s
+GROUP BY
+    s.City_Key,
+    s.Salesperson_Key, 
+   s.Invoice_Date_Key;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Connections[OleDbConnection]"
+                  connectionManagerID="{1E077640-421F-4F55-9999-37DFB25A2378}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImporters]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[City_Key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[City_Key]"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[City_Key]"
+                      name="City_Key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Salesperson_Key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[Salesperson_Key]"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Salesperson_Key]"
+                      name="Salesperson_Key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Invoice_Date_Key]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Date_Key]"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Invoice_Date_Key]"
+                      name="Invoice_Date_Key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Profit]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[Profit]"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Profit]"
+                      name="Profit"
+                      precision="18"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[TotalIncTax]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[TotalIncTax]"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[TotalIncTax]"
+                      name="TotalIncTax"
+                      precision="38"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[NumTransactions]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[NumTransactions]"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[NumTransactions]"
+                      name="NumTransactions"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[City_Key]"
+                      dataType="i4"
+                      name="City_Key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[Salesperson_Key]"
+                      dataType="i4"
+                      name="Salesperson_Key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Date_Key]"
+                      dataType="dbDate"
+                      name="Invoice_Date_Key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[Profit]"
+                      dataType="numeric"
+                      name="Profit"
+                      precision="38"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[TotalIncTax]"
+                      dataType="numeric"
+                      name="TotalIncTax"
+                      precision="38"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[NumTransactions]"
+                      dataType="i4"
+                      name="NumTransactions" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[City_Key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[City_Key]"
+                      name="City_Key" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[Salesperson_Key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[Salesperson_Key]"
+                      name="Salesperson_Key" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[Invoice_Date_Key]"
+                      dataType="dbDate"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[Invoice_Date_Key]"
+                      name="Invoice_Date_Key" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[TotalIncTax]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[TotalIncTax]"
+                      name="TotalIncTax"
+                      precision="38"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[Profit]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[Profit]"
+                      name="Profit"
+                      precision="38"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[NumTransactions]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[NumTransactions]"
+                      name="NumTransactions" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Extract From Source to Stage FactEmployeePerformance.Paths[OLE DB Source Output]"
+              endId="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF - Load from stgFact to FactEmployeePerformance"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B997AC3C-B6D6-4BCB-BDEB-40853103812A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Load from stgFact to FactEmployeePerformance"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column.Inputs[Derived Column Input].Columns[Invoice_Date_Key]"
+                      cachedDataType="dbDate"
+                      cachedName="Invoice_Date_Key"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Invoice_Date_Key]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      name="Derived Column 1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_I4)([YEAR](#{Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Invoice_Date_Key]}) * 10000 + [MONTH](#{Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Invoice_Date_Key]}) * 100 + [DAY](#{Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Invoice_Date_Key]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)(YEAR(Invoice_Date_Key) * 10000 + MONTH(Invoice_Date_Key) * 100 + DAY(Invoice_Date_Key))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="DimCity"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimCity]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimCity]) [refTable]
+where [refTable].[CityID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CityKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CityID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="City" dataType="DT_WSTR" length="40" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Location" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateProvinceKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RowIsCurrent" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RowStartDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RowEndDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RowChangeReason" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="InsertAuditKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdateAuditKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[City_Key]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity.Connections[OleDbConnection]"
+                  connectionManagerID="{30C18DC1-B3D1-42B8-8D37-87087F546341}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity.Inputs[Lookup Input].Columns[CityKey]"
+                      cachedDataType="i4"
+                      cachedName="City_Key"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[City_Key]"
+                      name="CityKey"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CityID</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">CityKey</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="dimDate"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimDate]) [refTable]
+where [refTable].[Date] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Month" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Quarter" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ISOWeekNumber" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TimeKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Invoice_Date_Key]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate.Connections[OleDbConnection]"
+                  connectionManagerID="{30C18DC1-B3D1-42B8-8D37-87087F546341}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate.Inputs[Lookup Input].Columns[Invoice_Date_Key]"
+                      cachedDataType="dbDate"
+                      cachedName="Invoice_Date_Key"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Invoice_Date_Key]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Date</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate.Inputs[Lookup Input].Columns[TimeKey]"
+                      cachedDataType="i4"
+                      cachedName="Derived Column 1"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      name="TimeKey"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn" />
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">TimeKey</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="DimEmployee"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimEmployees]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimEmployees]) [refTable]
+where [refTable].[EmployeeID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="EmployeeKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EmployeeID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ParentEmployeeID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EmployeeName" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Title" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Email" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RowIsCurrent" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RowStartDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RowEndDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RowChangeReason" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="InsertAuditKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdateAuditKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Salesperson_Key]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee.Connections[OleDbConnection]"
+                  connectionManagerID="{30C18DC1-B3D1-42B8-8D37-87087F546341}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee.Inputs[Lookup Input].Columns[EmployeeKey]"
+                      cachedDataType="i4"
+                      cachedName="Salesperson_Key"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Salesperson_Key]"
+                      name="EmployeeKey"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">EmployeeID</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">EmployeeKey</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgFact to FactEmployeePerformance\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\Multicast.Outputs[Multicast Output 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\DF - Load from stgFact to FactEmployeePerformance\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\Multicast.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\DF - Load from stgFact to FactEmployeePerformance\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactEmployeePerformance]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{30C18DC1-B3D1-42B8-8D37-87087F546341}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[City_Key]"
+                      cachedDataType="i4"
+                      cachedName="City_Key"
+                      externalMetadataColumnId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CityKey]"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[City_Key]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Salesperson_Key]"
+                      cachedDataType="i4"
+                      cachedName="Salesperson_Key"
+                      externalMetadataColumnId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeKey]"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Salesperson_Key]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TotalIncTax]"
+                      cachedDataType="numeric"
+                      cachedName="TotalIncTax"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalIncTax]"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[TotalIncTax]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Profit]"
+                      cachedDataType="numeric"
+                      cachedName="Profit"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Profit]"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Profit]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NumTransactions]"
+                      cachedDataType="i4"
+                      cachedName="NumTransactions"
+                      externalMetadataColumnId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NumTransactions]"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[NumTransactions]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Derived Column 1]"
+                      cachedDataType="i4"
+                      cachedName="Derived Column 1"
+                      externalMetadataColumnId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CityKey]"
+                      dataType="i4"
+                      name="CityKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeKey]"
+                      dataType="i4"
+                      name="EmployeeKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
+                      dataType="i4"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalIncTax]"
+                      dataType="numeric"
+                      name="TotalIncTax"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Profit]"
+                      dataType="numeric"
+                      name="Profit"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NumTransactions]"
+                      dataType="i4"
+                      name="NumTransactions" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InsertAuditKey]"
+                      dataType="i4"
+                      name="InsertAuditKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdateAuditKey]"
+                      dataType="i4"
+                      name="UpdateAuditKey" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BKFactTable]"
+                      dataType="i4"
+                      name="BKFactTable" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[E_PerformanceID]"
+                      dataType="i4"
+                      name="E_PerformanceID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - stgWideWorldImportersFactEmployeePerformance"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stgWideWorldImportersDWFactEmployeePerformance]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Connections[OleDbConnection]"
+                  connectionManagerID="{69F68E84-54C6-4BC8-854E-B9063CE017EA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-3C755U2.WideWorldImportersDWStage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[City_Key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[City_Key]"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[City_Key]"
+                      name="City_Key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Salesperson_Key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[Salesperson_Key]"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Salesperson_Key]"
+                      name="Salesperson_Key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Invoice_Date_Key]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Date_Key]"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Invoice_Date_Key]"
+                      name="Invoice_Date_Key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[TotalIncTax]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[TotalIncTax]"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[TotalIncTax]"
+                      name="TotalIncTax"
+                      precision="18"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Profit]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[Profit]"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[Profit]"
+                      name="Profit"
+                      precision="18"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[NumTransactions]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[NumTransactions]"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].Columns[NumTransactions]"
+                      name="NumTransactions"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[City_Key]"
+                      dataType="i4"
+                      name="City_Key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[Salesperson_Key]"
+                      dataType="i4"
+                      name="Salesperson_Key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Date_Key]"
+                      dataType="dbDate"
+                      name="Invoice_Date_Key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[TotalIncTax]"
+                      dataType="numeric"
+                      name="TotalIncTax"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[Profit]"
+                      dataType="numeric"
+                      name="Profit"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output].ExternalColumns[NumTransactions]"
+                      dataType="i4"
+                      name="NumTransactions" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[City_Key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[City_Key]"
+                      name="City_Key" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[Salesperson_Key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[Salesperson_Key]"
+                      name="Salesperson_Key" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[Invoice_Date_Key]"
+                      dataType="dbDate"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[Invoice_Date_Key]"
+                      name="Invoice_Date_Key" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[TotalIncTax]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[TotalIncTax]"
+                      name="TotalIncTax"
+                      precision="18"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[Profit]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[Profit]"
+                      name="Profit"
+                      precision="18"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[NumTransactions]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[NumTransactions]"
+                      name="NumTransactions" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Load from stgFact to FactEmployeePerformance.Paths[Derived Column Output]"
+              endId="Package\DF - Load from stgFact to FactEmployeePerformance\Multicast.Inputs[Multicast Input 1]"
+              name="Derived Column Output"
+              startId="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DF - Load from stgFact to FactEmployeePerformance.Paths[Lookup Match Output]"
+              endId="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DF - Load from stgFact to FactEmployeePerformance.Paths[Lookup Match Output1]"
+              endId="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DF - Load from stgFact to FactEmployeePerformance.Paths[Lookup Match Output2]"
+              endId="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DF - Load from stgFact to FactEmployeePerformance.Paths[Multicast Output 1]"
+              endId="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee.Inputs[Lookup Input]"
+              name="Multicast Output 1"
+              startId="Package\DF - Load from stgFact to FactEmployeePerformance\Multicast.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\DF - Load from stgFact to FactEmployeePerformance.Paths[OLE DB Source Output]"
+              endId="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL - Truncate stgFact Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1BC2C94E-9D8A-49B1-AA93-C3C490FA0972}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL - Truncate stgFact Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{69F68E84-54C6-4BC8-854E-B9063CE017EA}"
+          SQLTask:SqlStatementSource="Truncate table stgWideWorldImportersDWFactEmployeePerformance" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{C8D15F46-4376-45BA-8DB0-25B07A2950F8}"
+      DTS:From="Package\SQL - Truncate stgFact Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF - Extract From Source to Stage FactEmployeePerformance" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A1936918-40B2-4BCC-9EDF-EB20B174A72D}"
+      DTS:From="Package\DF - Extract From Source to Stage FactEmployeePerformance"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DF - Load from stgFact to FactEmployeePerformance" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="368,41.6"
+          Id="Package\DF - Extract From Source to Stage FactEmployeePerformance"
+          TopLeft="160.714286056404,175.117646905326" />
+        <NodeLayout
+          Size="327.2,41.6"
+          Id="Package\DF - Load from stgFact to FactEmployeePerformance"
+          TopLeft="220.000000468322,282.176470340897" />
+        <NodeLayout
+          Size="216,41.6"
+          Id="Package\SQL - Truncate stgFact Table"
+          TopLeft="218.35714331026,81.9705881682647" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="326.35714331026,123.570588168265">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.3571427461445,51.547058737061"
+              Start="0,0"
+              End="18.3571427461445,44.047058737061">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.7735293685305" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.7735293685305"
+                    Point2="0,25.7735293685305"
+                    Point3="4,25.7735293685305" />
+                  <mssgle:LineSegment
+                    End="14.3571427461445,25.7735293685305" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.3571427461445,25.7735293685305"
+                    Point2="18.3571427461445,25.7735293685305"
+                    Point3="18.3571427461445,29.7735293685305" />
+                  <mssgle:LineSegment
+                    End="18.3571427461445,44.047058737061" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="344.714286056404,216.717646905326">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="38.8857144119175,65.4588234355714"
+              Start="0,0"
+              End="38.8857144119175,57.9588234355714">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.7294117177857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.7294117177857"
+                    Point2="0,32.7294117177857"
+                    Point3="4,32.7294117177857" />
+                  <mssgle:LineSegment
+                    End="34.8857144119175,32.7294117177857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.8857144119175,32.7294117177857"
+                    Point2="38.8857144119175,32.7294117177857"
+                    Point3="38.8857144119175,36.7294117177857" />
+                  <mssgle:LineSegment
+                    End="38.8857144119175,57.9588234355714" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF - Extract From Source to Stage FactEmployeePerformance">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="360.8,41.6"
+          Id="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance"
+          TopLeft="224.28571476316,48.1764705460068" />
+        <NodeLayout
+          Size="361.6,41.6"
+          Id="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance"
+          TopLeft="219.071429026066,225.735293924602" />
+        <EdgeLayout
+          Id="Package\DF - Extract From Source to Stage FactEmployeePerformance.Paths[OLE DB Source Output]"
+          TopLeft="402.278571894613,89.7764705460068">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,135.958823378595"
+              Start="0,0"
+              End="0,128.458823378595">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,128.458823378595" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Extract From Source to Stage FactEmployeePerformance\DST - stgWideWorldImportersDWFactEmployeePerformance">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Extract From Source to Stage FactEmployeePerformance\SRC - stgWideWorldImportersDWFactEmployeePerformance">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF - Load from stgFact to FactEmployeePerformance">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="344,41.6"
+          Id="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance"
+          TopLeft="138.7,5.49999999999995" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\DF - Load from stgFact to FactEmployeePerformance\Derived Column"
+          TopLeft="235.09365079534,69.7143791177371" />
+        <EdgeLayout
+          Id="Package\DF - Load from stgFact to FactEmployeePerformance.Paths[OLE DB Source Output]"
+          TopLeft="311.09682539767,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.6143791177372"
+              Start="0,0"
+              End="0,15.1143791177372">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.1143791177372" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\DF - Load from stgFact to FactEmployeePerformance\Multicast"
+          TopLeft="249.90634920466,133.079085033605" />
+        <EdgeLayout
+          Id="Package\DF - Load from stgFact to FactEmployeePerformance.Paths[Derived Column Output]"
+          TopLeft="387.89365079534,90.5143791177371">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.9873015906807,63.3647059158676"
+              Start="0,0"
+              End="-10.4873015906807,63.3647059158676">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,59.3647059158676" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,59.3647059158676"
+                    Point2="22.5,63.3647059158676"
+                    Point3="18.5,63.3647059158676" />
+                  <mssgle:LineSegment
+                    End="-10.4873015906807,63.3647059158676" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee"
+          TopLeft="246.753967867079,204.090849766299" />
+        <EdgeLayout
+          Id="Package\DF - Load from stgFact to FactEmployeePerformance.Paths[Multicast Output 1]"
+          TopLeft="309.90634920466,174.679085033605">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.04761866241904,29.411764732694"
+              Start="0,0"
+              End="8.04761866241904,21.911764732694">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.705882366347" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.705882366347"
+                    Point2="0,14.705882366347"
+                    Point3="4,14.705882366347" />
+                  <mssgle:LineSegment
+                    End="4.04761866241904,14.705882366347" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.04761866241904,14.705882366347"
+                    Point2="8.04761866241904,14.705882366347"
+                    Point3="8.04761866241904,18.705882366347" />
+                  <mssgle:LineSegment
+                    End="8.04761866241904,21.911764732694" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="114.4,41.6"
+          Id="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity"
+          TopLeft="250.880952375377,280.816339895124" />
+        <EdgeLayout
+          Id="Package\DF - Load from stgFact to FactEmployeePerformance.Paths[Lookup Match Output]"
+          TopLeft="317.953967867079,245.690849766299">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.87301549170144,35.1254901288256"
+              Start="0,0"
+              End="-9.87301549170144,27.6254901288256">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.5627450644128" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.5627450644128"
+                    Point2="0,17.5627450644128"
+                    Point3="-4,17.5627450644128" />
+                  <mssgle:LineSegment
+                    End="-5.87301549170144,17.5627450644128" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.87301549170144,17.5627450644128"
+                    Point2="-9.87301549170144,17.5627450644128"
+                    Point3="-9.87301549170144,21.5627450644128" />
+                  <mssgle:LineSegment
+                    End="-9.87301549170144,27.6254901288256" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-53.1278944646007,22.5627450644128,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="117.6,41.6"
+          Id="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate"
+          TopLeft="246.636508166276,356.926143839036" />
+        <EdgeLayout
+          Id="Package\DF - Load from stgFact to FactEmployeePerformance.Paths[Lookup Match Output1]"
+          TopLeft="306.758730270827,322.416339895124">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.5098039439118"
+              Start="0,0"
+              End="0,27.0098039439118">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.0098039439118" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,7.70021447195592,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination"
+          TopLeft="205.555555993129,473.267973441371" />
+        <EdgeLayout
+          Id="Package\DF - Load from stgFact to FactEmployeePerformance.Paths[Lookup Match Output2]"
+          TopLeft="305.436508166276,398.526143839036">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.6809521731472,74.7418296023353"
+              Start="0,0"
+              End="-14.6809521731472,67.2418296023353">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.3709148011676" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.3709148011676"
+                    Point2="0,37.3709148011676"
+                    Point3="-4,37.3709148011676" />
+                  <mssgle:LineSegment
+                    End="-10.6809521731472,37.3709148011676" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.6809521731472,37.3709148011676"
+                    Point2="-14.6809521731472,37.3709148011676"
+                    Point3="-14.6809521731472,41.3709148011676" />
+                  <mssgle:LineSegment
+                    End="-14.6809521731472,67.2418296023353" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.5318628053236,42.3709148011676,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgFact to FactEmployeePerformance\SRC - stgWideWorldImportersFactEmployeePerformance">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgFact to FactEmployeePerformance\DimEmployee">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimEmployees]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgFact to FactEmployeePerformance\DimCity">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCity]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgFact to FactEmployeePerformance\dimDate">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgFact to FactEmployeePerformance\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
