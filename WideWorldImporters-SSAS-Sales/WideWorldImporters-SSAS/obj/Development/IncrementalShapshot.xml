@@ -19,49 +19,49 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>rFQMeMrfSsmgZ+4BD0pQLdPfdO4=5/22/2025 8:49:37 PM5/22/2025 8:49:37 PM</TimeStamp>
+        <TimeStamp>rFQMeMrfSsmgZ+4BD0pQLdPfdO4=5/22/2025 8:49:37 PM5/22/2025 11:17:18 PM</TimeStamp>
         <ID>
           <String>WideWorldImportersDW</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>7k/kIq0lfauZmvmfFlIHzpn/I6c=5/22/2025 8:52:25 PM5/22/2025 8:50:07 PM</TimeStamp>
+        <TimeStamp>7k/kIq0lfauZmvmfFlIHzpn/I6c=5/22/2025 8:52:25 PM5/22/2025 11:17:18 PM</TimeStamp>
         <ID>
           <String>WideWorldImportersDW</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>SCVQ7L/RtQneFQL+F4u0Cy2Pvak=5/22/2025 8:52:55 PM5/22/2025 8:50:21 PM</TimeStamp>
+        <TimeStamp>sW4dWM2ARq4iWezU1Lo6oIOYKdc=5/22/2025 11:43:26 PM5/22/2025 11:17:18 PM</TimeStamp>
         <ID>
           <String>Dim Date</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>Gm39WgtnAUVAQidFVd9im0tfZrk=5/22/2025 8:54:33 PM5/22/2025 8:50:21 PM</TimeStamp>
+        <TimeStamp>Gm39WgtnAUVAQidFVd9im0tfZrk=5/22/2025 8:54:33 PM5/22/2025 11:17:18 PM</TimeStamp>
         <ID>
           <String>Dim City</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>QbB5avlOoIs6ONDLu8bcED99/ZU=5/22/2025 8:54:59 PM5/22/2025 8:50:21 PM</TimeStamp>
+        <TimeStamp>CCcurMamTrFAFUl1NdjqzEktQhs=5/22/2025 11:43:26 PM5/22/2025 11:17:18 PM</TimeStamp>
         <ID>
           <String>Dim Customers</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>XP8TmehiwfHuBix6+CdPkppiKaw=5/22/2025 8:55:56 PM5/22/2025 8:50:21 PM</TimeStamp>
+        <TimeStamp>9wUL+OeiMKW7Hqo2MfWGj7cinps=5/22/2025 11:43:26 PM5/22/2025 11:17:18 PM</TimeStamp>
         <ID>
           <String>Dim Stock Items</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>jmWnIMA/TZ/tcoDU9925BM9MCtI=5/22/2025 8:55:56 PM5/22/2025 8:50:21 PM1vv6qOAZQfsGgYis4v2pVIavmao=5/22/2025 8:50:21 PM5/22/2025 8:50:21 PM</TimeStamp>
+        <TimeStamp>mi97tFSLT6FV5VH2/3va0gFVV5w=5/22/2025 11:43:26 PM5/22/2025 11:17:18 PM1vv6qOAZQfsGgYis4v2pVIavmao=5/22/2025 8:50:21 PM5/22/2025 11:17:18 PM</TimeStamp>
         <ID>
           <String>WideWorldImportersDW</String>
         </ID>
@@ -69,7 +69,7 @@
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>LlByKLuHeUBW131wWZ5PhIbMBoo=5/18/2025 4:06:24 PM5/21/2025 11:05:41 PM</TimeStamp>
+      <TimeStamp>LlByKLuHeUBW131wWZ5PhIbMBoo=5/18/2025 4:06:24 PM5/22/2025 11:17:18 PM</TimeStamp>
       <ID>
         <String>WideWorldImporters-SSAS</String>
       </ID>
@@ -78,5 +78,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2025-05-22T13:56:26.973333Z</LastDeployed>
+  <LastDeployed>2025-05-22T16:45:23.546667Z</LastDeployed>
 </DeploymentSnapshot>
