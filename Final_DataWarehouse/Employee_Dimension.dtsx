@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{FC9D11C2-FD7E-47E0-B214-265059EE8D9D}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{EA9CD9A4-2B1D-49C7-BC8B-8301B2D0F345}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1278,22 +1278,22 @@
           Id="Package\DF - Extract From Source to Stage stgEmployee"
           TopLeft="290.000000617334,140.705882229607" />
         <NodeLayout
-          Size="241.6,41.6"
-          Id="Package\SQL - Truncate stgEmployee Table"
-          TopLeft="282.142857743465,42.0588234925456" />
-        <NodeLayout
           Size="305.6,41.6"
           Id="Package\DF - Extract From stgEmployee to DimEmployee"
           TopLeft="267.142857711534,244.705882138447" />
+        <NodeLayout
+          Size="241.6,41.6"
+          Id="Package\SQL - Truncate stgEmployee Table"
+          TopLeft="282.142857743465,42.0588234925456" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="441.600000617334,182.305882229607">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-21.6571429057995,62.39999990884"
+              EndConnector="-21.6571429058,62.39999990884"
               Start="0,0"
-              End="-21.6571429057995,54.89999990884">
+              End="-21.6571429058,54.89999990884">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1304,13 +1304,13 @@
                     Point2="0,31.19999995442"
                     Point3="-4,31.19999995442" />
                   <mssgle:LineSegment
-                    End="-17.6571429057995,31.19999995442" />
+                    End="-17.6571429058,31.19999995442" />
                   <mssgle:CubicBezierSegment
-                    Point1="-17.6571429057995,31.19999995442"
-                    Point2="-21.6571429057995,31.19999995442"
-                    Point3="-21.6571429057995,35.19999995442" />
+                    Point1="-17.6571429058,31.19999995442"
+                    Point2="-21.6571429058,31.19999995442"
+                    Point3="-21.6571429058,35.19999995442" />
                   <mssgle:LineSegment
-                    End="-21.6571429057995,54.89999990884" />
+                    End="-21.6571429058,54.89999990884" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1325,9 +1325,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="38.6571428738685,57.0470587370614"
+              EndConnector="38.657142873869,57.0470587370614"
               Start="0,0"
-              End="38.6571428738685,49.5470587370614">
+              End="38.657142873869,49.5470587370614">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1338,13 +1338,13 @@
                     Point2="0,28.5235293685307"
                     Point3="4,28.5235293685307" />
                   <mssgle:LineSegment
-                    End="34.6571428738685,28.5235293685307" />
+                    End="34.657142873869,28.5235293685307" />
                   <mssgle:CubicBezierSegment
-                    Point1="34.6571428738685,28.5235293685307"
-                    Point2="38.6571428738685,28.5235293685307"
-                    Point3="38.6571428738685,32.5235293685307" />
+                    Point1="34.657142873869,28.5235293685307"
+                    Point2="38.657142873869,28.5235293685307"
+                    Point3="38.657142873869,32.5235293685307" />
                   <mssgle:LineSegment
-                    End="38.6571428738685,49.5470587370614" />
+                    End="38.657142873869,49.5470587370614" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1360,15 +1360,15 @@
     design-time-name="Package\DF - Extract From Source to Stage stgEmployee">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="148,41.6"
-          Id="Package\DF - Extract From Source to Stage stgEmployee\src - employee"
-          TopLeft="231.428571921222,41.2941176108629" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\DF - Extract From Source to Stage stgEmployee\des - stgEmployee"
           TopLeft="172.142857509304,184.294117485518" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\DF - Extract From Source to Stage stgEmployee\src - employee"
+          TopLeft="231.428571921222,41.2941176108629" />
         <EdgeLayout
           Id="Package\DF - Extract From Source to Stage stgEmployee.Paths[OLE DB Source Output]"
           TopLeft="305.428571921222,82.8941176108629">
@@ -1400,51 +1400,61 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Extract From Source to Stage stgEmployee\des - stgEmployee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Extract From Source to Stage stgEmployee\src - employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\DF - Extract From stgEmployee to DimEmployee">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\DF - Extract From stgEmployee to DimEmployee\scd - DimEmplpyee"
+          TopLeft="226.3,107.1" />
+        <NodeLayout
           Size="182.4,41.6"
           Id="Package\DF - Extract From stgEmployee to DimEmployee\src - stagingEmployee"
           TopLeft="219.5,5.49999999999995" />
         <NodeLayout
-          Size="168.8,41.6"
-          Id="Package\DF - Extract From stgEmployee to DimEmployee\scd - DimEmplpyee"
-          TopLeft="226.3,107.1" />
-        <EdgeLayout
-          Id="Package\DF - Extract From stgEmployee to DimEmployee.Paths[OLE DB Source Output]"
-          TopLeft="310.7,47.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="162.4,41.6"
           Id="Package\DF - Extract From stgEmployee to DimEmployee\Insert Destination"
           TopLeft="5.50000000000004,208.7" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\DF - Extract From stgEmployee to DimEmployee\OLE DB Command"
+          TopLeft="228.3,208.7" />
         <EdgeLayout
           Id="Package\DF - Extract From stgEmployee to DimEmployee.Paths[New Output]"
           TopLeft="283.9,148.7">
@@ -1481,10 +1491,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\DF - Extract From stgEmployee to DimEmployee\OLE DB Command"
-          TopLeft="228.3,208.7" />
         <EdgeLayout
           Id="Package\DF - Extract From stgEmployee to DimEmployee.Paths[Changing Attribute Updates Output]"
           TopLeft="337.5,148.7">
@@ -1521,48 +1527,33 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - Extract From stgEmployee to DimEmployee.Paths[OLE DB Source Output]"
+          TopLeft="310.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF - Extract From Source to Stage stgEmployee\src - employee">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF - Extract From Source to Stage stgEmployee\des - stgEmployee">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF - Extract From stgEmployee to DimEmployee\src - stagingEmployee">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DF - Extract From stgEmployee to DimEmployee\scd - DimEmplpyee">
     <Properties>
@@ -1621,6 +1612,19 @@
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Extract From stgEmployee to DimEmployee\src - stagingEmployee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
